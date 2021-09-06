@@ -1,0 +1,13 @@
+[Unit]
+Description= AWS Check
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/PATH/TO/NODE /usr/bin/healthcheck.js
+KillMode=process
+Restart=on-failure
+RestartSec=60s
+
+[Install]
+WantedBy=multi-user.target
